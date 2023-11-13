@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Chat</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <ul class="messages">
+        {% for message in messages %}
+        <li
+          class="message {% if 'You:' in message %}mine{% else %}theirs{% endif %}"
+        >
+          {{ message }}
+        </li>
+        {% endfor %}
+      </ul>
+
+      <form method="post" class="message-form">
+        Name: <input type="text" name="username" /><br />
+        Message: <input type="text" name="message" /><br />
+        <input type="submit" value="Send" />
+      </form>
+    </div>
+  </body>
+</html>

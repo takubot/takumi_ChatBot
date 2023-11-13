@@ -1,0 +1,8 @@
+runtime: python39 # またはあなたが使用しているPythonのバージョン
+
+entrypoint: gunicorn -b :$PORT main:app
+
+handlers:
+  - url: /.*
+    script: auto
+    secure: always

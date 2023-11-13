@@ -1,0 +1,3 @@
+Flask==2.2.5  # あなたの使用しているFlaskのバージョン
+gunicorn==20.1.0  # あなたの使用しているgunicornのバージョン
+Werkzeug==2.3.3

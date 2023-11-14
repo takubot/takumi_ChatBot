@@ -9,6 +9,8 @@ body {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-bottom: 60px; /* フォームの高さ分のスペースを確保 */
 }
 
 .messages {
@@ -26,19 +28,22 @@ body {
   word-wrap: break-word;
 }
 
-.mine {
+.message.right {
   background-color: #dcf8c6;
   margin-left: auto;
 }
 
-.theirs {
+.message.left {
   background-color: #ffffff;
 }
 
 .message-form {
-  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 40px); /* コンテナの幅に合わせる */
   background: #f0f0f0;
   border-top: 1px solid #e0e0e0;
+  padding: 10px 20px; /* 余白を追加 */
 }
 
 .message-form input[type="text"] {
@@ -46,6 +51,7 @@ body {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  width: 75%; /* フォームの幅を指定 */
 }
 
 .message-form input[type="submit"] {
@@ -56,6 +62,7 @@ body {
   color: white;
   font-size: 14px;
   cursor: pointer;
+  margin-left: 5px;
 }
 
 .message-form input[type="submit"]:hover {

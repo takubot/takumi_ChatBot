@@ -5,22 +5,23 @@
     <link rel="stylesheet" type="text/css" href="static/style.css" />
   </head>
   <body>
+    <!-- チャットコンテナ -->
     <div class="chat-container">
       <ul class="messages">
         {% for message in messages %}
         <li
-          class="message {% if 'You:' in message %}mine{% else %}theirs{% endif %}"
+          class="message {% if message.sender == 'user' %}right{% else %}left{% endif %}"
         >
-          {{ message }}
+          {{ message.text }}
         </li>
         {% endfor %}
       </ul>
-
-      <form method="post" class="message-form">
-        Name: <input type="text" name="username" /><br />
-        Message: <input type="text" name="message" /><br />
-        <input type="submit" value="Send" />
-      </form>
     </div>
+
+    <!-- メッセージフォーム -->
+    <form method="post" class="message-form">
+      Message: <input type="text" name="message" /><br />
+      <input type="submit" value="Send" />
+    </form>
   </body>
 </html>
